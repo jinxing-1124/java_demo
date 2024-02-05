@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+#      file: classpath:/db/changelog/changes/demo.sql   提供sql或xml版本
+      file: classpath:/db/changelog/changes/demo.xml

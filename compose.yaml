@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  demo_db_postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - ./dataset:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - demo-net
+
+networks:
+  demo-net:
+    name: demo-net
+    driver: bridge
